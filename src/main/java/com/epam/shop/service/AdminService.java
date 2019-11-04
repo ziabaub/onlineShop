@@ -41,7 +41,7 @@ public class AdminService {
     }
     private void SetProduct(Product product){
         ProductDao dao = new ProductDao();
-        dao.setProduct(product);
+        dao.addProduct(product);
     }
 
     /**

@@ -1,31 +1,37 @@
 package com.epam.shop.dao;
 
 import com.epam.shop.entity.User;
-import com.epam.shop.entity.Users;
 import com.epam.shop.singelton.SingletonOnlineShop;
 
+import java.util.List;
 import java.util.Optional;
+
 /**
  * This class realize UserDAO
  */
 public class UserDao {
-    private Users users = SingletonOnlineShop.getInstance().getUsers();
+    private List<User> users = SingletonOnlineShop.getInstance().getUser();
 
     /**
-     * Check user in database
-     * @param login user's login
-     * @param password user's password
-     * @return user with data like login and password
+     * Setter for user
+     *
+     * @param user user which need to add
      */
-    public Optional<User> login(String login , String password){
-        return users.isAvailable(login,password);
+    public void addUser(User user) {
+        this.users.add(user);
     }
 
     /**
-     * Register new user
-     * @param user user which want registered
+     * Check This method check available user
+     *
+     * @param login    user's login
+     * @param password user's password
+     * @return list of product which have such login and password
      */
-    public void register(User user) {
-        users.addUser(user);
+    public Optional<User> isAvailable(String login, String password) {
+        return users.stream()
+                .filter(u -> password.equals(u.getPassword())
+                        && login.equals(u.getLogin()))
+                .findFirst();
     }
 }

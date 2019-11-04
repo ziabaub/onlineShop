@@ -1,16 +1,18 @@
 <OnlineShop>
-    <products>
-        <product/>
-    </products>
     <users>
         <user>
-            <user>
-                <id>0</id>
-                <name>trtr</name>
-                <login>treter</login>
-                <password>tr</password>
-                <role>admin</role>
-            </user>
+            <id>101</id>
+            <name>fdgd</name>
+            <login>fdffd</login>
+            <password>fgdfg</password>
+            <role>admin</role>
+        </user>
+        <user>
+            <id>102</id>
+            <name>rtete</name>
+            <login>tretrt</login>
+            <password>rterr</password>
+            <role>client</role>
         </user>
     </users>
 </OnlineShop>

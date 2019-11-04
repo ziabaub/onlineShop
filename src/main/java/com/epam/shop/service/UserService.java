@@ -17,7 +17,7 @@ public class UserService {
      */
     public Optional<User> login(String login, String password) {
         UserDao dao = new UserDao();
-        return dao.login(login,password);
+        return dao.isAvailable(login,password);
     }
 
     /**
@@ -26,6 +26,6 @@ public class UserService {
      */
     public void register(User user) {
         UserDao dao = new UserDao();
-        dao.register(user);
+        dao.addUser(user);
     }
 }
