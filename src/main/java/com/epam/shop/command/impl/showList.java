@@ -19,7 +19,7 @@ public class showList implements Command {
     public Page execute() {
         OnlineShop shop = SingletonOnlineShop.getInstance();
         View view= new View();
-        for (Product product : shop.getProducts().getProducts().values()) {
+        for (Product product : shop.getProducts().getProduct()) {
             view.printProduct(product);
         }
         return new BackPage();

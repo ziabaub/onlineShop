@@ -49,13 +49,13 @@
 
     <xs:complexType name="Users">
         <xs:sequence>
-            <xs:element name="users" type="tns:User" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="user" type="tns:User" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="Products">
         <xs:sequence>
-            <xs:element name="products" type="tns:Product" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="product" type="tns:Product" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

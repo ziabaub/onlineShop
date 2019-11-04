@@ -15,13 +15,14 @@ public class ProductService {
      */
     public static Map<String, Product> sortByPrice(Map<String, Product> products) {
 
-        List<Map.Entry<String, Product>> list =
-                new LinkedList<>(products.entrySet());
-        list.sort(Comparator.comparing(Map.Entry::getValue));
-        Map<String, Product> sortedMap = new LinkedHashMap<>();
-        for (Map.Entry<String, Product> entry : list) {
-            sortedMap.put(entry.getKey(), entry.getValue());
-        }
-        return sortedMap;
+//        List<Map.Entry<String, Product>> list =
+//                new LinkedList<>(products.entrySet());
+//        list.sort(Comparator.comparing(Map.Entry::getValue));
+//        Map<String, Product> sortedMap = new LinkedHashMap<>();
+//        for (Map.Entry<String, Product> entry : list) {
+//            sortedMap.put(entry.getKey(), entry.getValue());
+//        }
+       // return sortedMap;
+        return null;
     }
 }

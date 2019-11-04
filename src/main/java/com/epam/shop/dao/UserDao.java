@@ -26,6 +26,6 @@ public class UserDao {
      * @param user user which want registered
      */
     public void register(User user) {
-        users.setUser(user);
+        users.addUser(user);
     }
 }

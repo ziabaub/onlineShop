@@ -8,6 +8,7 @@ import java.util.Objects;
 /**
  * Marked for class that will be at database
  */
+
 public class Entity implements Serializable {
     private  int id;
 

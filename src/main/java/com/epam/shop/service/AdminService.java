@@ -6,6 +6,7 @@ import com.epam.shop.entity.Product;
 import com.epam.shop.singelton.SingletonOnlineShop;
 
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * This class implements administrator functions
@@ -33,7 +34,7 @@ public class AdminService {
         return true;
     }
 
-    private Map<String,Product> getProduct(String name){
+    private Optional<Product> getProduct(String name){
         ProductDao dao = new ProductDao();
         return dao.getProduct(name);
 
@@ -50,10 +51,11 @@ public class AdminService {
      * @return if it isn't at list of product, it will return false. Otherwise it will return true
      */
     public boolean changeProductReference(String name, String reference){
-        Map<String,Product> prods = getProduct(name);
-        if (prods.isEmpty())
+        Optional<Product> prods = getProduct(name);
+        if (!prods.isPresent()) {
             return false;
-        Product prod = prods.get(name);
+        }
+        Product prod = prods.get();
         prod.setReference(reference);
         return true;
     }
@@ -63,8 +65,8 @@ public class AdminService {
      */
     public void deleteProduct(String name){
         OnlineShop shop = SingletonOnlineShop.getInstance();
-        Map<String,Product> products =shop.getProducts().getProducts();
-        products.entrySet().removeIf(entry -> entry.getKey().equals(name));
+//        Optional<Product>  products =shop.getProducts().getProducts();
+//        products.entrySet().removeIf(entry -> entry.getKey().equals(name));
     }
 
     /**
@@ -74,14 +76,14 @@ public class AdminService {
      * @return if it isn't at list of product, it will return false. Otherwise it will return true
      */
     public boolean changeProductName(String name, String newName){
-        OnlineShop shop = SingletonOnlineShop.getInstance();
-        Map<String,Product> prods = getProduct(name);
-        if (prods.isEmpty())
-            return false;
-        Product prod = prods.get(name);
-        deleteProduct(name);
-        prod.setName(newName);
-        shop.getProducts().setProduct(prod);
+  //      OnlineShop shop = SingletonOnlineShop.getInstance();
+       // Map<String,Product> prods = getProduct(name);
+//        if (prods.isEmpty())
+//            return false;
+//        Product prod = prods.get(name);
+//        deleteProduct(name);
+//        prod.setName(newName);
+//        shop.getProducts().addProduct(prod);
         return true;
     }
 
@@ -92,11 +94,11 @@ public class AdminService {
      * @return if it isn't at list of product, it will return false. Otherwise it will return true
      */
     public boolean changeProductDescription(String name, String description){
-        Map<String,Product> prods = getProduct(name);
-        if (prods.isEmpty())
-            return false;
-        Product prod = prods.get(name);
-        prod.setDescription(description);
+//        Map<String, Product> prods = getProduct(name);
+//        if (prods.isEmpty())
+//            return false;
+//        Product prod = prods.get(name);
+//        prod.setDescription(description);
         return true;
     }
 
@@ -107,13 +109,13 @@ public class AdminService {
      * @return if it isn't at list of product or price isn't between 1 and 1000, it will return false. Otherwise it will return true
      */
     public boolean changeProductPrice(String name, int price){
-        if ((price<=0)||(price>1000))
-            return false;
-        Map<String,Product> prods = getProduct(name);
-        if (prods.isEmpty())
-            return false;
-        Product prod = prods.get(name);
-        prod.setPrice(price);
+//        if ((price<=0)||(price>1000))
+//            return false;
+//        Map<String,Product> prods = getProduct(name);
+//        if (prods.isEmpty())
+//            return false;
+//        Product prod = prods.get(name);
+//        prod.setPrice(price);
         return true;
     }
 
@@ -124,13 +126,13 @@ public class AdminService {
      * @return it isn't at list of product or quantity isn't between 1 and 1000, it will return false. Otherwise it will return true
      */
     public boolean changeProductQuantity(String name, int quantity){
-        if ((quantity<0)||(quantity>1000))
-            return false;
-        Map<String,Product> prods = getProduct(name);
-        if (prods.isEmpty())
-            return false;
-        Product prod = prods.get(name);
-        prod.setQuantity(quantity);
+//        if ((quantity<0)||(quantity>1000))
+////            return false;
+////        Map<String,Product> prods = getProduct(name);
+////        if (prods.isEmpty())
+////            return false;
+////        Product prod = prods.get(name);
+////        prod.setQuantity(quantity);
         return true;
     }
 

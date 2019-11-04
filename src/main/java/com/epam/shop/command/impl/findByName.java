@@ -8,6 +8,7 @@ import com.epam.shop.entity.pages.impl.BackPage;
 import com.epam.shop.reader.Reader;
 import com.epam.shop.view.View;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,13 +25,14 @@ public class findByName implements Command {
         view.askName();
         String name = Reader.nextString();
         ProductDao dao = new ProductDao();
-        Map<String,Product> prods = dao.getProduct(name);
-        if (prods.isEmpty())
-            view.sayIncorrectValue();
-        else {
-            Product prod = prods.get(name);
-            view.printProduct(prod);
-        }
-        return new BackPage();
+        //List<Product> prods = dao.getProduct(name);
+//        if (prods.isEmpty())
+//            view.sayIncorrectValue();
+//        else {
+//            Product prod = prods.get(name);
+//            view.printProduct(prod);
+//        }
+//        return new BackPage();
+        return null;
     }
 }

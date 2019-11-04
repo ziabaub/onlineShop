@@ -15,14 +15,14 @@ public class ClientService {
      * Otherwise it will return true
      */
     public boolean BuyProduct(String name, Integer quantity){
-        if ((quantity < 1) || (quantity > 1000))
-            return false;
-        Product product = SingletonOnlineShop.getInstance().getProducts().getProduct(name);
-        if (product == null)
-            return false;
-        if (quantity > product.getQuantity())
-            return false;
-        product.setQuantity(product.getQuantity() - quantity);
+//        if ((quantity < 1) || (quantity > 1000))
+//            return false;
+//        Product product = SingletonOnlineShop.getInstance().getProducts().getProduct(name);
+//        if (product == null)
+//            return false;
+//        if (quantity > product.getQuantity())
+//            return false;
+//        product.setQuantity(product.getQuantity() - quantity);
         return true;
     }
 }
